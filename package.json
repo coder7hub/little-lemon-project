@@ -2,7 +2,7 @@
   "name": "little-lemon-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://coder7hub.github.io/little-lemon-project",
+ "homepage": "https://coder7hub.github.io/little-lemon-project",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/user-event": "^13.5.0",
