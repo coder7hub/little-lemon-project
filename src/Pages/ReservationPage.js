@@ -17,7 +17,6 @@ const initializeTimes = () => [
 const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // For now, return the same times regardless of the date
       return initializeTimes();
     default:
       return state;
@@ -35,33 +34,37 @@ export default function Reservation({ navigateFunc }) {
     setStep(prevStep => Math.max(1, prevStep - 1));
   };
 
-  
-
   return (
     <>
       <InfoProvider>
-        <div className='flex flex-col md:flex-col  px-[20px] py-[32px] md:px-[288px] md:py-[32px]'>
+        <div className='flex flex-col md:flex-col px-[20px] py-[32px] md:px-[288px] md:py-[32px] mt-[70px] md:mt-[100px]'>
           {/* Steps Header */}
-          <div className="stepsOFreservation  flex flex-row justify-between  align-center pt-[16px] px-[48px] ">
-            <div className="StepFirstCont  ">
-             <div className={` w-[39px] h-[39px] md:w-[45px] md:h-[45px] rotate-45 bg-[#495e57] ml-[23px]  ${step === 1 ? 'bg-[#495e57] '  : step > 1 ? 'bg-yellow-400 text-black' : 'bg-[#495e57]'}`}>
+          <div className="stepsOFreservation flex flex-row flex-wrap justify-center gap-[30px]  md:gap-[320px]   pt-[16px]">
 
-                <p className='   text-2xl text-white  pl-[11px] pt-[3px] -rotate-45'>1</p>
+            {/* Step 1 */}
+            <div className="StepFirstCont flex flex-col items-center">
+              <div className={`w-[30px] h-[30px] md:w-[45px] md:h-[45px] rotate-45 bg-[#495e57] ${step === 1 ? 'bg-[#495e57]' : step > 1 ? 'bg-yellow-400 text-black' : 'bg-[#495e57]'}`}>
+                <p className='text-xl md:text-2xl text-white pl-[8px] pt-[2px] -rotate-45'>1</p>
               </div>
-              <p className="text-[18px] text-base/6 pt-[18px] text-[#495e57] font-medium">Reservation</p>
+              <p className="text-[16px] md:text-[18px] text-[#495e57] font-medium pt-2 md:pt-4">Reservation</p>
             </div>
-            <div className="StepFirstCont">
-              <div className={`w-[39px] h-[39px]  md:w-[45px] md:h-[45px] rotate-45 bg-[#495e57] ml-[5px] ${step === 2 ? 'bg-[#495e57]' : step > 2 ? 'bg-yellow-400 items-black' : 'bg-[#495e57]'}`}>
-                <p className='   text-2xl text-white  pl-[11px] pt-[3px] -rotate-45'>2</p>
+
+            {/* Step 2 */}
+            <div className="StepFirstCont flex flex-col items-center">
+              <div className={`w-[30px] h-[30px] md:w-[45px] md:h-[45px] rotate-45 bg-[#495e57] ${step === 2 ? 'bg-[#495e57]' : step > 2 ? 'bg-yellow-400 text-black' : 'bg-[#495e57]'}`}>
+                <p className='text-xl md:text-2xl text-white pl-[8px] pt-[2px] -rotate-45'>2</p>
               </div>
-              <p className="text-[18px] text-base/6 pt-[18px] text-[#495e57] font-medium">Review</p>
+              <p className="text-[16px] md:text-[18px] text-[#495e57] font-medium pt-2 md:pt-4">Review</p>
             </div>
-            <div className="StepFirstCont flex flex-col align-center">
-              <div className={`w-[39px] h-[39px]  md:w-[45px] md:h-[45px] rotate-45 bg-[#495e57] ml-[10px] ${step === 3 ? 'bg-[#495e57]' : step > 3 ? 'bg-yellow-400' : 'bg-[#495e57]'}`}>
-                <p className='   text-2xl text-white  pl-[11px] pt-[3px] -rotate-45'>3</p>
+
+            {/* Step 3 */}
+            <div className="StepFirstCont flex flex-col items-center">
+              <div className={`w-[30px] h-[30px] md:w-[45px] md:h-[45px] rotate-45 bg-[#495e57] ${step === 3 ? 'bg-[#495e57]' : step > 3 ? 'bg-yellow-400 text-black' : 'bg-[#495e57]'}`}>
+                <p className='text-xl md:text-2xl text-white pl-[8px] pt-[2px] -rotate-45'>3</p>
               </div>
-              <p className="text-[18px] text-base/6 pt-[18px] text-[#495e57] font-medium">Payment</p>
+              <p className="text-[16px] md:text-[18px] text-[#495e57] font-medium pt-2 md:pt-4">Payment</p>
             </div>
+
           </div>
 
           {/* Step Forms */}
